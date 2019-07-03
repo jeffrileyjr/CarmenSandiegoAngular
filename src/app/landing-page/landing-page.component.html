@@ -1,0 +1,37 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Bangers&display=swap"
+  rel="stylesheet"
+/>
+<body>
+  <section class="home">
+    <img
+      src="http://penrycreative.com/wp-content/uploads/2016/08/Carmen-Sandiego_Circular-Logo-Design.png"
+      alt="Carmen Sandiego Logo"
+    />
+    <button class="newCase" (click)="toggleDisplay()">BEGIN THE CASE</button>
+  </section>
+  <div id="spotlight"></div>
+  <section class="agentForm" *ngIf="!shouldBeShown">
+    <p class="welcome">Welcome to the ACME Detective Agency!</p>
+    <p class="acme">
+      Our main goal here at ACME is to capture the elusive Carmen Sandiego!
+    </p>
+    <p class="enterName">
+      If you feel up to the task of catching this international criminal, then
+      please...
+    </p>
+    <form class="form" #agentForm="ngForm" (ngSubmit)="setUserName(agentForm)">
+      <label for="">Enter Agent Name:</label>
+      <input type="text" [(ngModel)]="userName" name="userName" />
+      <button
+        type="button"
+        class="beginCase"
+        routerLink="/home"
+        routerLinkActive="active"
+        (click)="setUserName(agentForm)">
+        Begin The Case
+      </button>
+    </form>
+  </section>
+
+</body>

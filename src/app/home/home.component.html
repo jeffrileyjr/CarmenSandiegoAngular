@@ -1,0 +1,24 @@
+<body>
+
+
+  <div class="email" *ngFor="let stolengood of stolenGoods">
+    <p class = "acme">ACME HEADQUARTERS</p>
+    <p>Agent {{userName}} </p>
+     <p> {{stolengood.stolengood}} </p>
+      <ul class="directions">
+        <li>You must travel around the world to pursue and capture Carmen Sandiego.</li>
+        <li>Each location has 3 clues that provide information about the culprit’s location.</li>
+        <li>You can fly out to the next location at anytime by clicking on the airplane icon..</li>
+        <li>Each correct flight takes 8 hours</li>
+        <li>An incorrect flight takes 14 hours.</li>
+        <li>If you need more clues, click on the fingerprint icon and you’ll receive the next clue, each clue uses 1 hour of time.</li>
+        <li>Your task is to piece together the clues, choose the correct location and arrest Carmen Sandiego before the 36 hour deadline.</li>
+      </ul>
+    <button routerLink="/location1" routerLinkActive="active">BEGIN THE CASE</button>
+  </div>
+
+
+
+</body>
+  
+
