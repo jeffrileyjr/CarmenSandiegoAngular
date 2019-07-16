@@ -37,21 +37,21 @@ export class ClueService {
     this.id = 1;
   }
   getScores() {
-    return this.http.get('http://localhost:3000/thescores', { responseType: 'json'});
+    return this.http.get('/thescores', { responseType: 'json'});
   }
   addScore(userAndScore) {
-    console.log(userAndScore);
-    return this.http.post('http://localhost:3000/thescores', userAndScore, { responseType: 'json'});
+    // console.log(userAndScore);
+    return this.http.post('/thescores', userAndScore, { responseType: 'json'});
   }
   getClues(nextCity) {
-    return this.http.get(`http://localhost:3000/clues/${nextCity}`, { responseType: 'json'});
+    return this.http.get(`/clues/${nextCity}`, { responseType: 'json'});
   }
   getStolenGoods(startingCity){
-    return this.http.get(`http://localhost:3000/stolenGoods/${startingCity}`, { responseType: 'json'});
+    return this.http.get(`/stolenGoods/${startingCity}`, { responseType: 'json'});
   }
   rightChoice() {
     this.id++;
-    console.log(this.id);
+    // console.log(this.id);
     this.router.navigate([`/location${this.id}`]);
   }
   setLocation1() {

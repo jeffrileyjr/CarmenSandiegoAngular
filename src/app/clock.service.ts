@@ -43,12 +43,12 @@ export class ClockService {
   }
 
   isTimeLeft() {
-    console.log("timeleft")
+    // console.log("timeleft")
     if (this.timeLeft > 0) {
-      console.log("timeleft over 0")
+      // console.log("timeleft over 0")
       return;
     } else {
-      console.log("timeleft under 0")
+      // console.log("timeleft under 0")
       this.router.navigate(['/gameover']);
     }
   }

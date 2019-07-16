@@ -88,7 +88,7 @@ export class Location1Component implements OnInit { // defines the logic
   }
   stopNoise() {
   this.backgroundNoise.pause();
-  console.log('stop the music');
+  // console.log('stop the music');
   }
   selectLocation() {
     if (this.selectedCity !== this.nextCity) {
@@ -102,7 +102,7 @@ export class Location1Component implements OnInit { // defines the logic
       this.clueService.rightChoice();
       this.theme.pause();
     }
-    console.log(this.selectedCity);
+    // console.log(this.selectedCity);
   }
 
 
@@ -111,10 +111,10 @@ export class Location1Component implements OnInit { // defines the logic
     this.nextCity = this.clueService.secondCity;
     this.clues = this.clueService.loc1Clues;
     this.startNoise();
-    console.log(this.currentCity)
+    // console.log(this.currentCity)
     // this gets a random photo of current city to use as background image
     this.photoURL = this.clueService.background1;
-    console.log(this.photoURL)
+    // console.log(this.photoURL)
     // this.pexelService.getLocationPhoto(this.currentCity).subscribe(response => {
     // this.photoURL = response[`photos`][0].src.original;
     //  });
@@ -127,12 +127,12 @@ export class Location1Component implements OnInit { // defines the logic
         this.clues[currentIndex] = this.clues[randomIndex];
         this.clues[randomIndex] = temporaryValue;
         this.localClues = this.clues;
-        console.log(this.localClues);
+        // console.log(this.localClues);
       }
     this.redHerring = this.clueService.redHerrings[1];
     this.wrongLocation = this.clueService.wrongLocations[Math.floor((Math.random() * 9))];
     this.locations.push(this.redHerring, this.wrongLocation, this.nextCity);
-    console.log(this.locations);
+    // console.log(this.locations);
 
     let thisIndex = 3;
 
@@ -145,7 +145,7 @@ export class Location1Component implements OnInit { // defines the logic
       this.locations[randomIndex] = temporaryValue;
       tempArray = this.locations;
       this.locations = tempArray;
-      console.log(this.locations);
+      // console.log(this.locations);
     }
 
     this.time = this.clockService.getTime();

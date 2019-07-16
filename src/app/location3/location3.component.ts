@@ -57,14 +57,14 @@ export class Location3Component implements OnInit {
 
   showCarmenText() {
     this.clueNumber++;
-    console.log(this.clueNumber);
+    // console.log(this.clueNumber);
     this.carmenText = !this.carmenText;
     this.textClose = !this.textClose;
   }
   // method that increases clueNumber so we can show the next clue
   showClue() {
     this.clueNumber = 0;
-    console.log(this.clueNumber);
+    // console.log(this.clueNumber);
     this.clockService.onClue();
     this.time = this.clockService.getTime();
     this.timeLeft = this.clockService.getTimeLeft();
@@ -89,7 +89,7 @@ export class Location3Component implements OnInit {
   // increase clueNumber to display next clue
   nextClue() {
     this.clueNumber = this.clueNumber + 1;
-    console.log(this.clueNumber);
+    // console.log(this.clueNumber);
     this.clockService.onClue();
     this.time = this.clockService.getTime();
     this.clockService.isTimeLeft();
@@ -101,7 +101,7 @@ export class Location3Component implements OnInit {
   }
   stopNoise() {
   this.backgroundNoise.pause();
-  console.log('stop the music');
+  // console.log('stop the music');
   }
   selectLocation() {
     if (this.selectedCity !== this.nextCity) {
@@ -137,13 +137,13 @@ export class Location3Component implements OnInit {
         this.clues[currentIndex] = this.clues[randomIndex];
         this.clues[randomIndex] = temporaryValue;
         this.localClues = this.clues;
-        console.log(this.localClues);
+        // console.log(this.localClues);
       }
       // gets the redHerring option from service then a wrong city
     this.redHerring = this.clueService.redHerrings[3];
     this.wrongLocation = this.clueService.wrongLocations[Math.floor((Math.random() * 9))];
     this.locations.push(this.redHerring, this.wrongLocation, this.nextCity);
-    console.log(this.locations);
+    // console.log(this.locations);
     let thisIndex = 3;
     while (0 !== thisIndex) {
         const randomIndex = Math.floor(Math.random() * thisIndex);
@@ -154,7 +154,7 @@ export class Location3Component implements OnInit {
         this.locations[randomIndex] = temporaryValue;
         tempArray = this.locations;
         this.locations = tempArray;
-        console.log(this.locations);
+        // console.log(this.locations);
       }
     this.time = this.clockService.getTime();
     this.timeLeft = this.clockService.getTimeLeft();

@@ -7,7 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class PexelApiService {
 
-  apiKey:string = "563492ad6f9170000100000128cb04362abc4b32b717e2c8e9125276";
+  // apiKey:string = "563492ad6f9170000100000128cb04362abc4b32b717e2c8e9125276";
   // second key
   // apiKey:string = "563492ad6f917000010000014a9669d68f174ec5af529706f09b0407";
   // apiKey:string = "563492ad6f91700001000001e6e48cd47bd449b78f60933192bbf8b8"
@@ -20,11 +20,11 @@ export class PexelApiService {
 
 
 
-  httpOptions = {
-    headers: new HttpHeaders({
-    Authorization: `${this.apiKey}`
-    })
-  };
+  // httpOptions = {
+  //   headers: new HttpHeaders({
+  //   Authorization: `${this.apiKey}`
+  //   })
+  // };
 
   constructor(private http: HttpClient) { }
 
@@ -33,7 +33,7 @@ export class PexelApiService {
   // }
 
   setLocationPhoto(location) {
-    console.log(location);
+    // console.log(location);
     return `../assets/${location}${this.randomPhoto}.jpg`;
   }
 

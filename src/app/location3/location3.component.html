@@ -65,8 +65,8 @@
             <div class="window" *ngIf="carmenText && textClose ">
                 <div class="titlebar">
                   <div class="textButtons">
-                    <div class="close">
-                      <a class="closebutton" (click)="closeText()"><span><strong>x</strong></span></a>
+                    <div class="close" (click)="closeText()">
+                      <a class="closebutton" ><span><strong>x</strong></span></a>
                       <!-- close button link -->
                     </div>
                     <div class="minimize">

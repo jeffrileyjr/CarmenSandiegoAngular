@@ -35,6 +35,7 @@ userName: string;
   textClose = false;
 
 
+  // tslint:disable-next-line: max-line-length
   constructor(private userService: UserService, private clueService: ClueService, private pexelService: PexelApiService, private clockService: ClockService) { }
   playTheme() {
     this.itunes = !this.itunes;
@@ -53,20 +54,20 @@ userName: string;
   }
   closeText() {
     this.textClose = !this.textClose;
-    console.log("sup");
-    console.log(this.textClose)
+    // console.log("sup");
+    console.log(this.textClose);
   }
 
   showCarmenText() {
     this.clueNumber++;
-    console.log(this.clueNumber);
+    // console.log(this.clueNumber);
     this.carmenText = !this.carmenText;
     this.textClose = !this.textClose;
   }
   // method that increases clueNumber so we can show the next clue
   showClue() {
     this.clueNumber = 0;
-    console.log(this.clueNumber);
+    // console.log(this.clueNumber);
     this.clockService.onClue();
     this.time = this.clockService.getTime();
     this.timeLeft = this.clockService.getTimeLeft();
@@ -91,7 +92,7 @@ userName: string;
   // increase clueNumber to display next clue
   nextClue() {
     this.clueNumber = this.clueNumber + 1;
-    console.log(this.clueNumber);
+    // console.log(this.clueNumber);
     this.clockService.onClue();
     this.time = this.clockService.getTime();
     this.clockService.isTimeLeft();
@@ -103,7 +104,7 @@ userName: string;
   }
   stopNoise() {
   this.backgroundNoise.pause();
-  console.log('stop the music');
+  // console.log('stop the music');
   }
   selectLocation() {
     if (this.selectedCity !== this.nextCity) {
@@ -117,7 +118,7 @@ userName: string;
       this.clueService.rightChoice();
       this.theme.pause();
     }
-    console.log(this.selectedCity);
+    // console.log(this.selectedCity);
   }
 
 
@@ -127,7 +128,7 @@ userName: string;
     this.nextCity = this.clueService.thirdCity;
     this.clues = this.clueService.loc2Clues;
     this.photoURL = this.clueService.background2;
-    console.log(this.photoURL);
+    // console.log(this.photoURL);
     this.startNoise();
     // this gets a random photo of current city to use as background image
     let currentIndex = this.clues.length;
@@ -138,12 +139,12 @@ userName: string;
         this.clues[currentIndex] = this.clues[randomIndex];
         this.clues[randomIndex] = temporaryValue;
         this.localClues = this.clues;
-        console.log(this.localClues);
+        // console.log(this.localClues);
       }
     this.redHerring = this.clueService.redHerrings[2];
     this.wrongLocation = this.clueService.wrongLocations[Math.floor((Math.random() * 9))];
     this.locations.push(this.redHerring, this.wrongLocation, this.nextCity);
-    console.log(this.locations);
+    // console.log(this.locations);
     let thisIndex = 3;
     while (0 !== thisIndex) {
       const randomIndex = Math.floor(Math.random() * thisIndex);
@@ -154,7 +155,7 @@ userName: string;
       this.locations[randomIndex] = temporaryValue;
       tempArray = this.locations;
       this.locations = tempArray;
-      console.log(this.locations);
+      // console.log(this.locations);
     }
     this.time = this.clockService.getTime();
     this.timeLeft = this.clockService.getTimeLeft();
