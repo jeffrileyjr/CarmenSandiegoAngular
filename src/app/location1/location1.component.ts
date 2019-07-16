@@ -107,12 +107,14 @@ export class Location1Component implements OnInit { // defines the logic
 
 
   ngOnInit() {
-    this.currentCity = this.clueService.startingCity; // how data is flowing
+    this.currentCity = this.clueService.startingCity;
     this.nextCity = this.clueService.secondCity;
     this.clues = this.clueService.loc1Clues;
     this.startNoise();
+    console.log(this.currentCity)
     // this gets a random photo of current city to use as background image
-    this.photoURL = this.pexelService.setLocationPhoto(this.currentCity);
+    this.photoURL = this.clueService.background1;
+    console.log(this.photoURL)
     // this.pexelService.getLocationPhoto(this.currentCity).subscribe(response => {
     // this.photoURL = response[`photos`][0].src.original;
     //  });

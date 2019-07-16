@@ -57,7 +57,7 @@
   
     <!-- desktop top---------------------------------------------- -->
   
-    <section class="background-image" [ngStyle]="{'background-image': photoURL === undefined ? 'url('+ backupImage+')' : 'url('+ photoURL+')'}">
+    <section class="background-image" [ngStyle]="{'background-image':'url('+ photoURL+')'}">
 
           <div class="iTunesImage" *ngIf="itunes" (click)="stopTheme()">
           
@@ -66,11 +66,11 @@
                 <div class="titlebar">
                   <div class="textButtons">
                     <div class="close">
-                      <a class="closebutton" (click)="closeText()"><span><strong>x</strong></span></a>
+                      <button class="closebutton" (click)="closeText()"><span><strong>x</strong></span></button>
                       <!-- close button link -->
                     </div>
                     <div class="minimize">
-                      <a class="minimizebutton" ><span><strong>&ndash;</strong></span></a>
+                      <button class="minimizebutton" ><span><strong>&ndash;</strong></span></button>
                       <!-- minimize button link -->
                     </div>
                     <div class="zoom">

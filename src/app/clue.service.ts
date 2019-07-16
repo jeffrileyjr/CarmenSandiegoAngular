@@ -9,7 +9,7 @@ import { PexelApiService } from './pexel-api.service';
 })
 export class ClueService {
 // tslint:disable-next-line: max-line-length
-  locations = ['Paris', 'Moscow', 'Dubai', 'Beijing', 'London', 'Berlin', 'Tokyo', 'Sydney', 'Detroit', 'New York', 'Hong Kong', 'Warsaw', 'Cleveland'];
+  locations = ['Paris', 'Moscow', 'Dubai', 'Beijing', 'London', 'Berlin', 'Tokyo', 'Sydney', 'Detroit', 'Chicago', 'Hong Kong', 'Warsaw', 'Cleveland'];
   // location4 = 'Detroit';
   // location4redHerring = 'Cleveland';
   randomPhoto: number = Math.floor((Math.random() * 5));
@@ -56,9 +56,10 @@ export class ClueService {
   }
   setLocation1() {
 // tslint:disable-next-line: max-line-length
-    this.locations = ['Paris', 'Moscow', 'Dubai', 'Beijing', 'London', 'Berlin', 'Tokyo', 'Sydney', 'Detroit', 'New York', 'Hong Kong', 'Warsaw', 'Cleveland'];
+    this.locations = ['Paris', 'Moscow', 'Dubai', 'Beijing', 'London', 'Berlin', 'Tokyo', 'Sydney', 'Detroit', 'Chicago', 'Hong Kong', 'Warsaw', 'Cleveland'];
     const randomIndex = Math.floor(Math.random() * this.locations.length);
     this.startingCity = this.locations[randomIndex];
+    this.background1 = this.pexelService.setLocationPhoto(this.startingCity);
     this.locations.splice(randomIndex, 1);
 // tslint:disable-next-line: max-line-length
     this.redHerring = ['Cannes', 'Sochi', 'Abu Dhabi', 'Shanghai', 'Liverpool', 'Munich', 'Kyoto', 'Perth', 'Cleveland', 'Boston', 'Seoul', 'Prague', 'Cincinnati'];

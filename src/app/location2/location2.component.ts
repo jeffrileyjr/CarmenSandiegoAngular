@@ -53,6 +53,8 @@ userName: string;
   }
   closeText() {
     this.textClose = !this.textClose;
+    console.log("sup");
+    console.log(this.textClose)
   }
 
   showCarmenText() {
@@ -125,6 +127,7 @@ userName: string;
     this.nextCity = this.clueService.thirdCity;
     this.clues = this.clueService.loc2Clues;
     this.photoURL = this.clueService.background2;
+    console.log(this.photoURL);
     this.startNoise();
     // this gets a random photo of current city to use as background image
     let currentIndex = this.clues.length;

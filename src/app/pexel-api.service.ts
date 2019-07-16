@@ -16,7 +16,7 @@ export class PexelApiService {
   // apiKey: string = "563492ad6f917000010000017412b886e2eb44d2b968e5bd22bed326";
 
     photoURL;
-    randomPhoto: number = Math.floor((Math.random() * 3) + 1);
+    randomPhoto: number = Math.floor((Math.random() * 5) + 1);
 
 
 
@@ -33,6 +33,7 @@ export class PexelApiService {
   // }
 
   setLocationPhoto(location) {
+    console.log(location);
     return `../assets/${location}${this.randomPhoto}.jpg`;
   }
 
