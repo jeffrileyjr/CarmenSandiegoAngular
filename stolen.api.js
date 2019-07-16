@@ -1,8 +1,8 @@
 "use strict";
 const express = require("express");
 const stolen = express.Router();
-// const pool = require('./pg-connection-pool');
-const pool = require('./connection');
+const pool = require('./pg-connection-pool');
+// const pool = require('./pg-connection-pool.js');
 
 // function getClues(res) {
 //   pool.query("SELECT * FROM clues WHERE city=$1::text", ['Detroit']).then(result => res.json(result.rows));

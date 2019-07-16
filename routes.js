@@ -1,7 +1,7 @@
 "use strict"
 const express = require("express");
 const clues = express.Router();
-const pool = require("./connection");
+const pool = require("./pg-connect-pool.js");
 
 function selectAll(res){
     pool
